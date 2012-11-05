@@ -1,11 +1,14 @@
 # -*-shell-script-*-
 
+. "$genapp_functions/core"
+
 install_agent() {
     cp $plugin_dir/lib/newrelic.jar $app_dir/newrelic.jar
 }
 
 install_yml() {
-    echo "$newrelic_yml" > $app_dir/newrelic.yml
+    _yml=$(metadata newrelic_yml)
+    echo "$_yml" > $app_dir/newrelic.yml
 }
 
 write_java_opts() {
