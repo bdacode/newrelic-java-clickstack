@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -u
+set -e
+
+. "$plugin_dir/functions"
+
+install_agent
+install_yml
+write_java_opts
+write_jboss_modules_system_pkgs

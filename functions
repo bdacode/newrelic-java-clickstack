@@ -1,0 +1,24 @@
+# -*-shell-script-*-
+
+install_agent() {
+    cp $plugin_dir/lib/newrelic.jar $app_dir/newrelic.jar
+}
+
+install_yml() {
+    echo "$newrelic_yml" > $app_dir/newrelic.yml
+}
+
+write_java_opts() {
+    _config=$control_dir/jvm-opts-50-newrelic
+    echo "Writing newrelic java options to $_config"
+    opts=(
+        "-javaagent:$app_dir/newrelic.jar"
+        "-Dnewrelic.config.file=$app_dir/newrelic.yml"
+        "-Dnewrelic.logfile=$log_dir/newrelic")
+    echo ${opts[@]} > $_config
+}
+
+write_jboss_modules_system_pkgs() {
+    echo "com.newrelic.agent" \
+      > $control_dir/jboss-modules-system-pkgs-newrelic
+}
