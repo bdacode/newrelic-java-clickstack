@@ -10,8 +10,8 @@ pkg_files = README LICENSE setup functions lib
 include plugin.mk
 
 newrelic_ver = 2.10
-newrelic_jar_src = http://cloudbees-downloads.s3.amazonaws.com/appserver/newrelic-$(newrelic_ver).jar
+newrelic_agent_src = http://cloudbees-downloads.s3.amazonaws.com/appserver/newrelic-$(newrelic_ver).jar
 
 lib/newrelic.jar:
 	mkdir -p lib
-	curl -fLo lib/newrelic.jar "$(newrelic_jar_src)"
+	curl -fLo lib/newrelic.jar "$(newrelic_agent_src)"
