@@ -12,11 +12,11 @@ install_yml() {
 }
 
 write_java_opts() {
-    _config=$control_dir/java-opts-50-newrelic
-    echo "Writing newrelic java options to $_config"
-    echo "-javaagent:$app_dir/newrelic.jar" >> $_config
-    echo "-Dnewrelic.config.file=$app_dir/newrelic.yml" >> $_config
-    echo "-Dnewrelic.logfile=$log_dir/newrelic" >> $_config
+    _opts_file=$control_dir/java-opts-50-newrelic
+    echo "Writing newrelic java options to $_opts_file"
+    echo "-javaagent:$app_dir/newrelic.jar" \
+         "-Dnewrelic.opts_file.file=$app_dir/newrelic.yml" \
+         "-Dnewrelic.logfile=$log_dir/newrelic" >> $_opts_file
 }
 
 write_jboss_modules_system_pkgs() {
