@@ -1,6 +1,6 @@
 plugin_name = newrelic-java-plugin
 publish_bucket = cloudbees-clickstack
-publish_repo = dev
+publish_repo = testing
 publish_url = s3://$(publish_bucket)/$(publish_repo)/
 
 deps = lib/newrelic.jar
