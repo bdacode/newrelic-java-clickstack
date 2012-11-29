@@ -20,3 +20,34 @@ $ make s3cfg=PATH_TO_S3CFG publish_bucket=BUCKET publish_repo=REPO publish
 
 BUCKET is the s3 bucket. REPO is the repository within the bucket (repository
 is just a directory name).
+
+## Upgrading NewRelic
+
+If the NewRelic jar file changes, you need to rebuild the plugin. You can
+either modify the Makefile directly, or specify different make variables in the
+make command itself (e.g. if you just want to test a specific jar without
+modifying the Makefile).
+
+The two applicable make variables are `newrelic_ver` and
+`newrelic_agent_src`. Refer to Makefile to see how they're used.
+
+Before building/publishing the plugin, run:
+
+$ make clean
+
+This will remove the current newrelic.jar.
+
+Modify the Makefile or specify the make variables as appropriate for your
+scenario and run "make publish" as per the instructions above.
+
+## Deployment Scenarios
+
+ClickStack plugins are not typically versioned. Instead, developers use
+different repository locations to isolate different versions.
+
+To deploy an untested version of a plugin, use a "testing" repository. Projects
+that want to use the "testing" version of the plugin can specify that location
+as their plugin source.
+
+Once the plugin has been tested and deemed stable enough for production use, it
+can be deployed to the appropriate production repository.
