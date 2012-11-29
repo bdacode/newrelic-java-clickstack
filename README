@@ -1,1 +1,22 @@
 # NewRelic ClickStack plugin
+
+## Building
+
+$ make
+
+## Publishing to S3
+
+To publish to the default bucket and repository that's defined in the Makefile:
+
+$ make s3cfg=PATH_TO_S3CFG publish
+
+PATH_TO_S3CFG should be the location of the s3cfg file containing your s3
+credentials. Use s3cfg.in provided with this project as the template for this
+file.
+
+To publish to a different bucket and repository:
+
+$ make s3cfg=PATH_TO_S3CFG publish_bucket=BUCKET publish_repo=REPO publish
+
+BUCKET is the s3 bucket. REPO is the repository within the bucket (repository
+is just a directory name).
