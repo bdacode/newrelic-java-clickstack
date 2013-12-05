@@ -8,10 +8,10 @@ pkg_files = README LICENSE setup functions lib
 
 include plugin.mk
 
-newrelic_ver = 3.1.0
+newrelic_ver = 3.2.0
 newrelic_agent_src = http://cloudbees-downloads.s3.amazonaws.com/appserver/newrelic-$(newrelic_ver).jar
 plugin_name = newrelic-java-plugin-$(newrelic_ver)
-newrelic_md5 = 85819da9bfc07dfd3e817b93dc85a969
+newrelic_md5 = 7955d56013c79096747f35ab4f54a858
 
 lib/newrelic.jar:
 	mkdir -p lib
