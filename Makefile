@@ -8,10 +8,10 @@ pkg_files = README LICENSE setup functions lib
 
 include plugin.mk
 
-newrelic_ver = 3.2.3
+newrelic_ver = 3.3.1
 newrelic_agent_src = http://repo1.maven.org/maven2/com/newrelic/agent/java/newrelic-agent/$(newrelic_ver)/newrelic-agent-$(newrelic_ver).jar
 plugin_name = newrelic-java-plugin-$(newrelic_ver)
-newrelic_md5 = 389131355cec7b7eb89f907e9b16f159
+newrelic_md5 = b750f2be90fcd9a6ee458a28c72b44e7
 
 lib/newrelic.jar:
 	mkdir -p lib
